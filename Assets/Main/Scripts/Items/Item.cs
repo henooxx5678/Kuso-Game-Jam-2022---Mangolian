@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Item : RigidbodyAttached {
         return instances.Where(item => item.tags.Contains(tag));
     }
 
+    public static event Action<Item> ItemPicked;
 
 
 
@@ -24,11 +26,26 @@ public class Item : RigidbodyAttached {
         instances.Remove(this);
     }
 
+    void OnMouseDown () {
+        TryBeenPick();
+        print(1);
+    }
+
 
     public bool IsInPickableRange () {
         return (this.transform.position - PlayerCar.current.transform.position).sqrMagnitude < PlayerCar.pickRangeDistance * PlayerCar.pickRangeDistance;
     }
 
+
+    public void TryBeenPick () {
+        if (IsInPickableRange()) {
+            ItemPicked?.Invoke(this);
+            print(1.2f);
+        }
+        else {
+            print("too far");
+        }
+    }
 
 
 }

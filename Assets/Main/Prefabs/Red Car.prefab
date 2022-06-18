@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2717188373423239194}
   - component: {fileID: 4677688057052507208}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Front Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 7574725825018735783}
   - component: {fileID: 8088899519412151347}
   - component: {fileID: 3025390625857842843}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Red Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   carSettings:
     mass: 1500
     drag: 0.05
-    centerOfMass: {x: 0, y: -1, z: 0}
+    centerOfMass: {x: 0, y: -2, z: 0}
     motorTorque: 1200
     padelBrakeTorque: 3000
     handBrakeTorque: 3000
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2948944223761941288}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: wheelsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1837928764614350660}
   - component: {fileID: 6653568653748801881}
-  m_Layer: 31
+  m_Layer: 2
   m_Name: Wall Front (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 8384341681501984019}
   - component: {fileID: 3719451679940918067}
   - component: {fileID: 233973036653553029}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: wheel front right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8890544516611939534}
   - component: {fileID: 6357905128098919368}
-  m_Layer: 31
+  m_Layer: 2
   m_Name: Wall Back (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7159621137921615026}
   - component: {fileID: 3026363432078767327}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Back Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9004721831197205118}
   - component: {fileID: 1188030307881840606}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Front Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 8692493449959371918}
   - component: {fileID: 7136381819087692896}
   - component: {fileID: 4293084127676207676}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: wheel front left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854365691244071254}
   - component: {fileID: 7824964923797260461}
-  m_Layer: 31
+  m_Layer: 2
   m_Name: Wall R (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9068348523468812970}
   - component: {fileID: 1198973608346926409}
-  m_Layer: 31
+  m_Layer: 2
   m_Name: Wall L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5414339399394910920}
   - component: {fileID: 7562143286473672476}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Back Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 5834395231512284338}
   - component: {fileID: 2145516376034288297}
   - component: {fileID: 2498010199482245041}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: wheel back right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 1125878040629566790}
   - component: {fileID: 4961040311715803823}
   - component: {fileID: 592608978698697621}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 8070765975407072546}
   - component: {fileID: 2541703800802406339}
   - component: {fileID: 1412083524147803823}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: wheel back left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,6 +984,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Items Container
       objectReference: {fileID: 0}
+    - target: {fileID: 646182602386115599, guid: c978b4be731dcda499de17eab98970b4, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 648907624609319611, guid: c978b4be731dcda499de17eab98970b4, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565266189431251625, guid: c978b4be731dcda499de17eab98970b4, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 6314433217743653652, guid: c978b4be731dcda499de17eab98970b4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 5.44
@@ -991,6 +1003,10 @@ PrefabInstance:
     - target: {fileID: 6314433217743653652, guid: c978b4be731dcda499de17eab98970b4, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048129867844970035, guid: c978b4be731dcda499de17eab98970b4, type: 3}
+      propertyPath: m_Layer
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8405779217750937548, guid: c978b4be731dcda499de17eab98970b4, type: 3}
       propertyPath: m_RootOrder

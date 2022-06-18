@@ -6,7 +6,7 @@ public class PlayerCar : MonoBehaviour {
 
     public static PlayerCar current;
 
-    public static float pickRangeDistance = 2.5f;
+    public static float pickRangeDistance = 5f;
 
 
     CarControler _carController;
@@ -27,10 +27,14 @@ public class PlayerCar : MonoBehaviour {
 
     void OnEnable () {
         carController.isRecievingPlayerInput = true;
+        
+        Item.ItemPicked += OnItemPicked;
     }
 
     void OnDisable () {
         carController.isRecievingPlayerInput = false;
+
+        Item.ItemPicked -= OnItemPicked;
     }
     
     void FixedUpdate () {
@@ -46,6 +50,12 @@ public class PlayerCar : MonoBehaviour {
             // alcohol
             carController.isDrunk = itemsContainer.ContainsItemWithTag("alcohol");
         }
+    }
+
+
+    protected void OnItemPicked (Item item) {
+        itemsContainer.AddItem(item);
+        print(2);
     }
 
 

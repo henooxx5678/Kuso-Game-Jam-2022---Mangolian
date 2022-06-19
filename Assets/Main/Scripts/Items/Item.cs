@@ -40,7 +40,6 @@ public class Item : RigidbodyAttached {
     public void TryBeenPick () {
         if (IsInPickableRange()) {
             ItemPicked?.Invoke(this);
-            print(1.2f);
         }
         else {
             print("too far");

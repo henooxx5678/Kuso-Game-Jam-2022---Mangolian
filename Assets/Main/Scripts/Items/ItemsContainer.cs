@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DoubleHeat.Common;
@@ -23,6 +24,10 @@ public class ItemsContainer : MonoBehaviour {
 
     public bool ContainsItemWithTag (string tag) {
         return Item.GetItemsWithTag(tag).Any(item => ContainsItem(item));
+    }
+
+    public IEnumerable<Item> GetContainedItems () {
+        return Item.instances.Where(item => ContainsItem(item));
     }
 
 }

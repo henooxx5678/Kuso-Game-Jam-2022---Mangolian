@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Main/Scenes/init.unity
+    guid: e2b5b944eea274e4d82bce0d3ffa0b5c
+  - enabled: 1
+    path: Assets/Main/Scenes/Cars Showing.unity
+    guid: 3c81f42a0208d0b43871700803ba4dff
+  - enabled: 1
+    path: Assets/Main/Scenes/Terrain Farm.unity
+    guid: 3cc6ede100e890449aa4642c963feaa2
+  - enabled: 1
+    path: Assets/Main/Scenes/Terrain Track.unity
+    guid: ca17bd9e3d39e7e4a8a885cc9b5115ef
+  - enabled: 1
+    path: Assets/Main/Scenes/Terrain Desert.unity
+    guid: 2080c5e93befa6446925f57bc8e60338
   m_configObjects: {}

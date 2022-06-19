@@ -8,7 +8,7 @@ public class PlayerCar : MonoBehaviour {
 
     public static PlayerCar current;
 
-    public static float pickRangeDistance = 7f;
+    public static float pickRangeDistance = 8.7f;
 
 
     public float huntedSpeedThreshold = 0.3f;
@@ -34,7 +34,7 @@ public class PlayerCar : MonoBehaviour {
     void OnEnable () {
         carController.isRecievingPlayerInput = true;
         
-        Item.ItemPicked += OnItemPicked;
+        Item.ItemBeenPicked += OnItemPicked;
 
 
         CarCamera carCam = UnityEngine.Object.FindObjectOfType<CarCamera>();
@@ -45,7 +45,7 @@ public class PlayerCar : MonoBehaviour {
     void OnDisable () {
         carController.isRecievingPlayerInput = false;
 
-        Item.ItemPicked -= OnItemPicked;
+        Item.ItemBeenPicked -= OnItemPicked;
     }
     
     void FixedUpdate () {

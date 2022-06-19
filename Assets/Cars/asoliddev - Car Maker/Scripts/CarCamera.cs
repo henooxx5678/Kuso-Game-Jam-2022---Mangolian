@@ -29,14 +29,19 @@ public class CarCamera : MonoBehaviour
 
     private void Start()
     {
-        ///set the start position to the camera
-        Vector3 newPosition = target.position + new Vector3(0, carCameraSettingsList[cameraSettingsIndex].height, 0) + target.forward * -carCameraSettingsList[cameraSettingsIndex].distance;
-        this.transform.position = newPosition;
-        this.transform.LookAt(target);
+        if (target) {
+            ///set the start position to the camera
+            Vector3 newPosition = target.position + new Vector3(0, carCameraSettingsList[cameraSettingsIndex].height, 0) + target.forward * -carCameraSettingsList[cameraSettingsIndex].distance;
+            this.transform.position = newPosition;
+            this.transform.LookAt(target);
+        }
     }
 
     void LateUpdate()
     {
+
+        if (!target)
+            return;
 
         ///return if there is no camera settings
         if (carCameraSettingsList == null)

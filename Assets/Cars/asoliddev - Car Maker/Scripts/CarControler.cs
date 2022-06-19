@@ -43,6 +43,10 @@ public class CarControler : MonoBehaviour
     float _currentWaitForNextDrunkMoveTime = 0f;
     DrunkState _currentDrunkState = null;
 
+
+
+    bool _isStartListeningInput = false;
+
     
 
     protected class DrunkState {
@@ -99,7 +103,17 @@ public class CarControler : MonoBehaviour
         wheelMesh.transform.rotation = realRotation;
     }
 
-    public void FixedUpdate()
+    public void ResetVelocity () {
+        rbody.velocity = Vector3.zero;
+    }
+
+
+
+    void OnEnable () {
+        _isStartListeningInput = false;
+    }
+
+    void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -110,6 +124,16 @@ public class CarControler : MonoBehaviour
             horizontalInput = 0f;
         }
 
+
+        if (!_isStartListeningInput) {
+            if (verticalInput < 0.5f) {
+                _isStartListeningInput = true;
+            }
+            else {
+                verticalInput = 0f;
+                horizontalInput = 0f;
+            }
+        }
 
 
         if (isDrunk) {

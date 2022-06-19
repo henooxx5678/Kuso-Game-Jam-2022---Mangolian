@@ -98,11 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   carCameraSettingsList:
-  - distance: 13
-    height: 8
+  - distance: 7
+    height: 4.5
     smoothTime: 0.3
-  - distance: 20
-    height: 15
+  - distance: 7.5
+    height: 4
     smoothTime: 0.3
   - distance: 6
     height: 3

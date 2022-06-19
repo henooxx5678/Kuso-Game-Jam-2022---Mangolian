@@ -9,6 +9,7 @@ public class PlayerCar : MonoBehaviour {
     public static PlayerCar current;
 
     public static float pickRangeDistance = 8.7f;
+    public static event Action<float> Collided;
 
 
     public float huntedSpeedThreshold = 0.3f;
@@ -37,7 +38,7 @@ public class PlayerCar : MonoBehaviour {
         Item.ItemBeenPicked += OnItemPicked;
 
 
-        CarCamera carCam = UnityEngine.Object.FindObjectOfType<CarCamera>();
+        CarCamera carCam = UnityEngine.Object.FindObjectOfType<CarCamera>(true);
         carCam.gameObject.SetActive(true);
         carCam.target = this.transform;
     }
@@ -58,6 +59,10 @@ public class PlayerCar : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter (Collision collision) {
+        Collided?.Invoke(collision.relativeVelocity.magnitude);
+    }
+
 
     public void CheckContainedItems () {
         if (itemsContainer) {
@@ -76,35 +81,43 @@ public class PlayerCar : MonoBehaviour {
     }
 
 
-    protected void ResetPose () {
+    public void ResetPose () {
 
         if (PathHolder.current) {
             Vector3 pos;
             Quaternion rot;
             PathHolder.current.GetPoseOfResetToPathPoint(this.transform.position, out pos, out rot);
 
-            Vector3 deltaPos = pos - this.transform.position;
-            Quaternion deltaRot = rot * Quaternion.Inverse(this.transform.rotation);
-
-
-
-            GameObject parentObject = new GameObject("player car parent");
-            parentObject.transform.position = this.transform.position;
-
-            this.transform.SetParent(parentObject.transform, true);
-
-            itemsContainer.GetContainedItems().ToList().ForEach(item => item.transform.SetParent(parentObject.transform, true));
-
-            parentObject.transform.position += deltaPos;
-            parentObject.transform.rotation = deltaRot * parentObject.transform.rotation;
-            
-            this.transform.SetParent(null, true);
-            itemsContainer.GetContainedItems().ToList().ForEach(item => item.transform.SetParent(null, true));
-            Destroy(parentObject);
+            SetPose(pos, rot);
         }
         else {
             print("no path holder");
         }
+
+    }
+
+    public void SetPose (Vector3 pos, Quaternion rot) {
+
+        Vector3 deltaPos = pos - this.transform.position;
+        Quaternion deltaRot = rot * Quaternion.Inverse(this.transform.rotation);
+
+
+
+        GameObject parentObject = new GameObject("player car parent");
+        parentObject.transform.position = this.transform.position;
+
+        this.transform.SetParent(parentObject.transform, true);
+
+        itemsContainer.GetContainedItems().ToList().ForEach(item => item.transform.SetParent(parentObject.transform, true));
+
+        parentObject.transform.position += deltaPos;
+        parentObject.transform.rotation = deltaRot * parentObject.transform.rotation;
+        
+        this.transform.SetParent(null, true);
+        itemsContainer.GetContainedItems().ToList().ForEach(item => item.transform.SetParent(null, true));
+        Destroy(parentObject);
+
+        carController.ResetVelocity();
     }
 
 }

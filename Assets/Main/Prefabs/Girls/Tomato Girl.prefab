@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 747406343704049131}
   - component: {fileID: 747406343704049130}
   - component: {fileID: 747406343704049129}
+  - component: {fileID: 3401207798027970654}
   m_Layer: 30
   m_Name: Tomato Girl
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 747406343704049140}
   m_LocalRotation: {x: -0.0583653, y: -0.3610766, z: -0.08050544, w: 0.9272195}
   m_LocalPosition: {x: 0.943, y: -0.5377725, z: -29.74}
-  m_LocalScale: {x: 0.90245545, y: 0.90245545, z: 0.90245545}
+  m_LocalScale: {x: 0.9024555, y: 0.9024555, z: 0.9024555}
   m_Children:
   - {fileID: 4731405970267510760}
   - {fileID: 747406345380482825}
@@ -149,6 +150,19 @@ MonoBehaviour:
   canBePick: 1
   tags:
   - girl
+--- !u!114 &3401207798027970654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747406343704049140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d038c521be030a479ed63d5ab23a825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  girlNumber: 0
 --- !u!1 &747406344860211655
 GameObject:
   m_ObjectHideFlags: 0

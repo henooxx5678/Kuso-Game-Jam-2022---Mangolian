@@ -151,10 +151,10 @@ MonoBehaviour:
     mass: 1500
     drag: 0.05
     centerOfMass: {x: 0, y: -2, z: 0}
-    motorTorque: 3000
-    padelBrakeTorque: 5000
-    handBrakeTorque: 10000
-    steeringAngle: 30
+    motorTorque: 5000
+    padelBrakeTorque: 8000
+    handBrakeTorque: 8000
+    steeringAngle: 20
   speed: 0
 --- !u!1 &1527458994046056678
 GameObject:

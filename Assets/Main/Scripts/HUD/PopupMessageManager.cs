@@ -7,6 +7,7 @@ public class PopupMessageManager : MonoBehaviour {
     
     public Text messageText;
     public float defaultShowingDuration;
+    
     public Messages messages;
 
 
@@ -21,11 +22,17 @@ public class PopupMessageManager : MonoBehaviour {
     void OnEnable () {
         GlobalEventManager.AddListener("too far to pick", OnTooFarToPick);
         GlobalEventManager.AddListener("try to pick multiple girls", OnTryToPickMultipleGirl);
+        GlobalEventManager.AddListener("got driver license", OnGotDriverLicense);
+        GlobalEventManager.AddListener("happy to win", OnWin);
+        GlobalEventManager.AddListener("unhappy to lose", OnLose);
     }
 
     void OnDisable () {
         GlobalEventManager.RemoveListener("too far to pick", OnTooFarToPick);
         GlobalEventManager.RemoveListener("try to pick multiple girls", OnTryToPickMultipleGirl);
+        GlobalEventManager.RemoveListener("got driver license", OnGotDriverLicense);
+        GlobalEventManager.RemoveListener("happy to win", OnWin);
+        GlobalEventManager.RemoveListener("unhappy to lose", OnLose);
     }
 
 
@@ -37,6 +44,19 @@ public class PopupMessageManager : MonoBehaviour {
     [ContextMenu("OnTryToPickMultipleGirl")]
     void OnTryToPickMultipleGirl () {
         Show(messages.tryToPickMultipleGirl);
+    }
+
+    [ContextMenu("OnGotDriverLicense")]
+    void OnGotDriverLicense () {
+        Show(messages.gotDriverLicense);
+    }
+
+    void OnWin () {
+        Show(messages.happyToWin);
+    }
+
+    void OnLose() {
+        Show(messages.unhappyToLose);
     }
 
 
@@ -62,6 +82,15 @@ public class PopupMessageManager : MonoBehaviour {
     public class Messages {
         public string tooFarToPick;
         public string tryToPickMultipleGirl;
+        
+        [TextArea]
+        public string gotDriverLicense;
+
+        [TextArea]
+        public string happyToWin;
+
+        [TextArea]
+        public string unhappyToLose;
     }
 
 }

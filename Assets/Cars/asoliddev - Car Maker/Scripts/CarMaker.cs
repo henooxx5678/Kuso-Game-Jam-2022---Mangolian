@@ -26,7 +26,7 @@ using UnityEditor;
 * Camera view : F1
 * 
 */
-
+#if UNITY_EDITOR
 
 [ExecuteInEditMode]
 public class CarMaker : EditorWindow
@@ -578,3 +578,5 @@ public class CarMaker : EditorWindow
         return childGO;
     }
 }
+
+#endif

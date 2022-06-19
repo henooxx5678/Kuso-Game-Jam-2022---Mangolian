@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/Terrain Desert.unity
     guid: 2080c5e93befa6446925f57bc8e60338
+  - enabled: 1
+    path: Assets/Main/Scenes/Game Complete.unity
+    guid: 6a4fdeb291876fd4f808f283676c9fe2
+  - enabled: 1
+    path: Assets/Main/Scenes/Terrain Free Track.unity
+    guid: 3b849795aab0f3d498b546adbc67d12b
   m_configObjects: {}
